@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preload" href="estilos/estilo.css" as="style">
+    <link rel="preload" href="scripts/scriptItens.js" as="script">
+    <link rel="shortcut icon" href="favicon.ico" type="">
+
+    <link rel="stylesheet" href="estilos/estilo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Burger Haven</title>
+</head>
+
+<body>
+    <!--Cabeçalio-->
+    <header>
+        <nav class="conteinerHeard">
+            <p><b>Haven Burger</b></p>
+        </nav>
+    </header>
+
+    <main>
+        <!--Menu-->
+        <section class="menuCima">
+
+            <nav class="menuheader">
+                <div class="containerP">
+                    <p><b>Logo aqui</b></p>
+                </div>
+                <div class="hamburger active">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <ul id="menuTp">
+                    <a class="mnTp" href="http://127.0.0.1:5500/index.html">Home</a>
+                    <a class="mnTp" href="http://127.0.0.1:5500/index.html" target="_blank">Sobre nós</a>
+                    <a class="mnTp" href="#">Cardápio</a>
+                    <a class="mnTp" href="#" onclick="abreCarrinho()">Carrinho</a>
+
+                </ul>
+            </nav>
+        </section>
+        <!--carrinho-->
+        <div class="carrinho">
+            <div class="passoPedido">
+                <img class="imgPasso" src="imagens/passo1.png" alt="Passo 2 de ">
+            </div>
+            <button class="xisCarrinho" onclick="fechaCarrinho()">
+                <h3>Fechar</h3>
+            </button>
+            <h1>Seu Carrinho</h1>
+            <div id="carrinho"></div>
+            <div class="limparTotal">
+                <button class="limpar" onclick="limparCarrinho()">
+                    <img src="imagens/lixo.png" alt="Botao Limpar">
+                </button>
+            </div>
+            <hr class="hr">
+            <div class="finalizar">
+                <p class="totalCompra"></p>
+                <button class="btnFinalizar gotoCep" onclick="gotoCep()">Avançar</button>
+            </div>
+        </div>
+        <!--TelaCep-->
+        <div class="cep">
+            <div class="passoPedido">
+                <img class="imgPasso" src="imagens/passo2.png" alt="Passo 2 de ">
+            </div>
+            <div class="cepContent">
+
+                <h2 class="sbttCep">Endereço de entrega</h2>
+
+
+                <div class="pesquisaEnd midiaPesqEnd">
+                    <button class="btnPesquisaCep pesquisaPorCep" onclick="pesquisaPorCEP()">Buscar por CEP</button>
+                    <button class="btnPesquisaCep pesquisarManual"onclick="pesquisaManual()">Inserir Manualmente</button>
+                </div>
+
+
+                <div class="formularioPesqCEP">
+                    <div class="insiraCep cepMidia">
+                        <label class="cepLabel" for="cep">CEP:</label>
+                        <div class="cepImgBusca">
+                            <input class="cepInput" type="cep" placeholder="DIgite o CEP" id="cepInput">
+                            <img class="imgBuscarCep" id="buscarCep" src="imagens/lupaSearch.png"
+                                onclick="btnBuscarCep()" alt="Botão buscar CEP">
+                        </div>
+                    </div>
+                    <div class="formularioCep">
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Endereço:</label>
+                            <p class="endinput" type="endereco" id="logradouro"></p>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Bairro:</label>
+                            <p class="endinput" type="endereco" id="bairro"></p>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel numUf" for="endereco">Núm:</label>
+                            <input class="endinput numUf" type="endereco" id="numeroEnd">
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Cidade:</label>
+                            <p class="endinput" type="endereco" id="cidade"></p>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Complem.:</label>
+                            <input class="endinput" type="endereco">
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel numUf" for="endereco">UF:</label>
+                            <p class="endinput numUf" type="endereco" id="estado"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="formularioPesqManual">
+                    <div class="formularioCep">
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Endereço:</label>
+                            <input class="endinput" type="endereco" id="logradouro2"></input>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Bairro:</label>
+                            <input class="endinput" type="endereco" id="bairro2"></input>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel numUf" for="endereco">Núm:</label>
+                            <input class="endinput numUf" type="endereco2"  id="numeroEnd2">
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Cidade:</label>
+                            <input class="endinput" type="endereco" id="cidade2"></input>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Complem.:</label>
+                            <input class="endinput" type="endereco">
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel numUf" for="endereco">UF:</label>
+                            <input class="endinput numUf" type="endereco" id="estado2"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr class="hr">
+            <div class="finalizar">
+                <div class="voltarFinalizar">
+                    <button class="btnFinalizar gotoCaarrinho" onclick="gotoCaarrinho()">Voltar</button>
+                    <button class="btnFinalizar gotoInfoOk" onclick="abrirTelaFim()">Avançar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!--TelaFinalizar-->
+
+        <div class="finalizarPedidos">
+
+            <div class="passoPedido">
+                <img class="imgPasso" src="imagens/passo3.png" alt="Passo 2 de ">
+            </div>
+
+            <button class="xisCarrinho" onclick="fechaFInal()">
+                <h3>Fechar</h3>
+            </button>
+
+            <div class="boxFinalizaPagamento">
+                <div class="infopedido">
+                    <h2>Itens no pedido</h2>
+                    <p class="fimPedidoItens"></p>
+                </div>
+                <div class="infoEnd">
+                    <h2>Endereço de entrega </h2>
+                    <p class="fimPedidoRua"></p>
+                    <p class="fimPedidoCdd"></p>
+                </div>
+                
+                <p class="totalFimPedido"></p>
+                <h2>Forma de Pagamento:</h2>
+                <div class="conteinerFormaPgmt">
+                    <select class="listaPgmto" name="formaDePgmto" id="fimPagamento">
+                        <option class="slcBox" value="formaDePgmt">Forma de pagamento</option>
+                        <option class="slcBox" value="Dinheiro">Dinheiro</option>
+                        <option class="slcBox" value="Crédito">Crédito</option>
+                        <option class="slcBox" value="Débito">Débito</option>
+                        <option class="slcBox" value="Pix">Pix</option>
+                    </select>
+                </div>
+            </div>
+            
+
+            <hr class="hr">
+            <div class="finalizar">
+               
+
+                <div class="voltarFinalizar">
+                    <button class="btnFinalizar gotoCaarrinho" onclick="fechaTelaFim()">Voltar</button>
+                    <button class="btnFinalizar gotoInfoOk" onclick="msgWApp()">Finalizar Pedido</button>
+                </div>
+            </div>
+
+        </div>
+        <!--cardapio-->
+        <section class="cardapio">
+
+            <div class="escodeMain">
+                <div class="tabConteiner">
+                    <div class="btnAbas">
+                        <button class="tabBtn active" data-tab="tab1">Combos</button>
+                        <button class="tabBtn " data-tab="tab2">Lanches</button>
+                        <button class="tabBtn " data-tab="tab3">Bebidas</button>
+                        <!--<button class="tabBtn " data-tab="tab4">Adicionais</button>>-->
+                    </div>
+                    <div class="conteudoAba" id="tab1">
+                        <!--Combos-->
+                        <div class="abaCombos">
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_cheese_burger_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Chease Burger + Coca + Batata</p>
+                                <p class="lanchePreco">R$44.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_cheese_pomodoro_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Haven Burger + Coca + Batata</p>
+                                <p class="lanchePreco">R$49.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_cheese_salad_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Viggie Burger + Coca + Batata</p>
+                                <p class="lanchePreco">R$52.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_mediterraneo_vegetariano_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Chicken Burger + Coca + Batata</p>
+                                <p class="lanchePreco">R$54.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/haburgersCombos/rustic_burger_angus_rustic_combo.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Mush Burger + Coca + Batata</p>
+                                <p class="lanchePreco">R$56.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/rustic_burger_angus_rustic_duplo_combo.jpg" alt="">
+                                <p class="nomeLanche">Bacon Burger + Coca + Batata</p>
+                                <p class="lanchePreco">R$56.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/rustic_burger_rustic_chicken_combo_2.jpg" alt="">
+                                <p class="nomeLanche">Classic Burger + Coca + Batata</p>
+                                <p class="lanchePreco">R$62.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/SITE_RUSTIC_BURGER_COMBO_ZUCCHINI.jpg" alt="">
+                                <p class="nomeLanche">Duplo Haven + Coca + Batata</p>
+                                <p class="lanchePreco">R$65.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_rustic_burger_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Haven Special + Coca + Batata</p>
+                                <p class="lanchePreco">R$69.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_kids_front.jpg" alt="">
+                                <p class="nomeLanche">Super Combo Kids + Sobremesa </p>
+                                <p class="lanchePreco">R$39.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Lanches-->
+                    <div class="conteudoAba" id="tab2">
+                        <div class="abaCombos">
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_cheese_burger_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Chease Burger</p>
+                                <p class="lanchePreco">R$44.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_cheese_pomodoro_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Haven Burger</p>
+                                <p class="lanchePreco">R$49.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_cheese_salad_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Viggie Burger</p>
+                                <p class="lanchePreco">R$52.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_mediterraneo_vegetariano_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Chicken Burger</p>
+                                <p class="lanchePreco">R$54.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/haburgersCombos/rustic_burger_angus_rustic_combo.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Mushroom Burger</p>
+                                <p class="lanchePreco">R$56.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/rustic_burger_angus_rustic_duplo_combo.jpg" alt="">
+                                <p class="nomeLanche">Bacon Burger</p>
+                                <p class="lanchePreco">R$56.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/rustic_burger_rustic_chicken_combo_2.jpg" alt="">
+                                <p class="nomeLanche">Classic Burger</p>
+                                <p class="lanchePreco">R$62.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/SITE_RUSTIC_BURGER_COMBO_ZUCCHINI.jpg" alt="">
+                                <p class="nomeLanche">Duplo Haven</p>
+                                <p class="lanchePreco">R$65.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_rustic_burger_front.jpg"
+                                    alt="">
+                                <p class="nomeLanche">Haven Special</p>
+                                <p class="lanchePreco">R$69.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo"
+                                    src="imagens/haburgersCombos/cardapio_rustic_burger_combo_kids_front.jpg" alt="">
+                                <p class="nomeLanche"> Combo Kids</p>
+                                <p class="lanchePreco">R$39.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Bebidas-->
+                    <div class="conteudoAba" id="tab3">
+                        <div class="abaCombos">
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/bebidas/refrisLata.jpg" alt="">
+                                <p class="nomeLanche">Refris 350ml</p>
+                                <p class="lanchePreco">R$9.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/bebidas/Refri2l.jpg" alt="">
+                                <p class="nomeLanche">Refris 2l</p>
+                                <p class="lanchePreco">R$14.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/bebidas/Sucos.jpg" alt="">
+                                <p class="nomeLanche">Sucos Naturais</p>
+                                <p class="lanchePreco">R$14.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/bebidas/cervejaLata.jpg" alt="">
+                                <p class="nomeLanche">Cerveja 350ml</p>
+                                <p class="lanchePreco">R$9.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/bebidas/longneck.jpg" alt="">
+                                <p class="nomeLanche">Long Neck</p>
+                                <p class="lanchePreco">R$10.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/bebidas/cerveja600.jpg" alt="">
+                                <p class="nomeLanche">Cerveja 600ml</p>
+                                <p class="lanchePreco">R$12.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/bebidas/aguaSgas.jpg" alt="">
+                                <p class="nomeLanche">Água S/ Gás</p>
+                                <p class="lanchePreco">R$7.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                            <div class="combos combosMedia fadeUp">
+                                <img class="imgCombo" src="imagens/bebidas/aguaCgas.jpg" alt="">
+                                <p class="nomeLanche">Água C/ Gás</p>
+                                <p class="lanchePreco">R$7.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais" onclick=""><b>+</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos" onclick=""><b>-</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conteudoAba" id="tab4">
+                        <div class="abaCombos">
+                            <div class="combos fadeUp">
+                                <p class="nomeLanche">Batata Frita</p>
+                                <p class="lanchePreco">R$4.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais"><b>-</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos"><b>+</b></p>
+                                </div>
+                            </div>
+                            <div class="combos fadeUp">
+                                <p class="nomeLanche">Carne Gourmet</p>
+                                <p class="lanchePreco">R$7.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais"><b>-</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos"><b>+</b></p>
+                                </div>
+                            </div>
+                            <div class="combos fadeUp">
+                                <p class="nomeLanche">Bacon</p>
+                                <p class="lanchePreco">R$5.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais"><b>-</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos"><b>+</b></p>
+                                </div>
+                            </div>
+                            <div class="combos fadeUp">
+                                <p class="nomeLanche">Queijo</p>
+                                <p class="lanchePreco">R$4.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais"><b>-</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos"><b>+</b></p>
+                                </div>
+                            </div>
+                            <div class="combos fadeUp">
+                                <p class="nomeLanche">Condimentos</p>
+                                <p class="lanchePreco">R$4.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais"><b>-</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos"><b>+</b></p>
+                                </div>
+                            </div>
+                            <div class="combos fadeUp">
+                                <p class="nomeLanche">Molhos</p>
+                                <p class="lanchePreco">R$4.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais"><b>-</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos"><b>+</b></p>
+                                </div>
+                            </div>
+                            <div class="combos fadeUp">
+                                <p class="nomeLanche">Maionese Caseira</p>
+                                <p class="lanchePreco">R$4.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais"><b>-</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos"><b>+</b></p>
+                                </div>
+                            </div>
+                            <div class="combos fadeUp">
+                                <p class="nomeLanche">Outros</p>
+                                <p class="lanchePreco">R$4.99</p>
+                                <div class="addLanche">
+                                    <p class="btnMais"><b>-</b></p>
+                                    <p class="qtdAdd"><b>0</b></p>
+                                    <p class="btnMenos"><b>+</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </did>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="rodapeContainer">
+            <div class="redesSociais">
+                <h4>Siga-nos</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/" target="_blank"><img src="imagens/facebook.png" alt="">
+                            <b>Facebook</b></a></li>
+                    <li><a href="https://www.Instagram.com/" target="_blank"><img src="imagens/instagram (1).png"
+                                alt=""> <b>Instagram</b></a></li>
+                    <li><a href="https://twitter.com/" target="_blank"> <img src="imagens/twitter.png"
+                                alt=""><b>twiter</b></a></li>
+                    <li><a href="https://www.whatsapp.com/" target="_blank"><img src="imagens/whatsapp.png" alt="">
+                            <b>whatsapp</b></a></li>
+
+                </ul>
+            </div>
+            <div class="politicaPrivacidade">
+                <div class="contato">
+                    <h4>Contato</h4>
+                    <p>Endereço: Rua Principal, 123 - Cidade, Estado</p>
+                    <p>Telefone: (12) 3456-7890</p>
+                    <p>Email: contato@hamburgueria.com</p>
+                </div>
+                <p><a href="politica-privacidade.html">Política de Privacidade</a></p>
+            </div>
+        </div>
+        <div class="direitosAutorais">
+            <p>© 2023 Hamburgueria Fictícia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/scriptItens.js" defer></script>
+    <script src="scripts/carrinho.js" defer></script>
+
+</body>
+
+</html>

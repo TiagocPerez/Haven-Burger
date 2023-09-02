@@ -1,0 +1,1481 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: none;
+    font-family: var(--fonte1);
+
+
+    --corSombraF: rgb(65, 40, 20);
+    --corfundo: rgb(94, 60, 34);
+
+    --corBordaA: rgb(204, 149, 91);
+
+    --bege: rgb(229, 208, 173);
+
+    --corCorpo: rgb(31, 30, 30);
+    --corFundoC: rgb(185, 185, 185);
+
+    --fonte1: 'Montserrat', sans-serif;
+
+    /*Marrom Café: RGB(94, 60, 34)
+    Marrom Médio: RGB(140, 90, 50)
+    Canela: RGB(194, 140, 85)
+    Bege: RGB(229, 208, 173)
+    Preto: RGB(0, 0, 0))*/
+
+}
+
+@media screen and (max-width: 950px) {
+
+
+
+    .cartServico {
+        display: flex;
+        padding: 0 50px;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgItem {
+        width: 400px;
+        margin-right: 15px;
+    }
+
+    .imgItem img {
+        width: 100%;
+        height: auto;
+    }
+
+    .servico>p {
+        margin: 10px 5px 25px 5px;
+        font: 1em var(--fonte1);
+        color: white;
+        max-width: 350px;
+    }
+
+    .menuheader .containerP {
+        display: none;
+    }
+
+    .menuheader .hamburger {
+        display: flex;
+        z-index: 989;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+
+    }
+
+    .menuheader {
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        height: 100vh;
+        margin: 0;
+
+        z-index: 989;
+
+        background-color: var(--corCorpo);
+
+        width: 100vw;
+        max-width: 300px;
+
+        display: flex;
+        flex-direction: column;
+
+        transition: 0.5s ease;
+
+    }
+
+    .menuheader.open {
+        transform: translateX(0);
+    }
+
+    .menuheader.active {
+        right: 0;
+    }
+
+    .menuheader>ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .mnTp {
+        width: 300px;
+        text-align: center;
+    }
+
+    .promo>img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 20px;
+        transition: .5s;
+
+    }
+
+    .boxDesc {
+        max-width: 400px;
+        margin: 0 auto;
+        transition: .5s;
+    }
+
+    .boxPreco {
+        max-width: 400px;
+        margin: 0 auto;
+        transition: .5s;
+    }
+
+    /*carrocel*/
+
+    .bttVV {
+        display: none;
+    }
+
+    .carrocelConteiner.touch {
+        touch-action: pan-y;
+    }
+
+    .carrocelItem img {
+        width: 100vw !important;
+    }
+
+    /*slides*/
+
+    .sliders {
+        max-width: 300px;
+        height: auto;
+    }
+
+    .slide>img {
+        max-width: 300px;
+        height: auto;
+    }
+
+    .manualNavi {
+        position: absolute;
+        max-width: 300px;
+        margin-top: 300px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navegaAutomatico {
+        position: absolute;
+        max-width: 300px;
+        margin-top: 300px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .slide>div {
+        position: relative;
+        left: 0;
+    }
+
+    .labelOferta>span {
+        margin-left: 10px;
+        font-size: 10px;
+    }
+
+    .tituloSlide>span {
+        font-size: 10px;
+
+    }
+
+    .addSlide>button {
+        font-size: 10px;
+        height: 25px;
+    }
+
+
+    /*havenBurger*/
+    .burgerDesc {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .burgerDesc>img {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .burgerDesc>p {
+        max-width: 80vw;
+        text-align: center;
+        margin: auto;
+        font-size: 1em !important;
+    }
+
+    .mdNos {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    /*sobrenos*/
+    .mdNos img {
+        width: 80vw;
+    }
+
+    /*combos*/
+    .conteudoAba {
+        margin: 25px auto;
+    }
+
+    .conteudoAba>div {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conteudoAba>div img {
+        margin-right: 10px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .conteudoAba>div:hover img {
+        margin-right: 10px;
+    }
+
+    .conteudoAba>div p {
+        margin-right: 10px;
+    }
+
+
+
+    .combosMedia {
+        min-width: 70vw !important;
+        padding: 15px 30px;
+        background-color: white;
+        text-align: center;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .combosMedia:hover {
+        background-color: var(--corBordaA);
+        text-align: center;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+
+    .combosMedia:hover>p {
+        color: white;
+    }
+
+    .combosMedia:hover>.addLanche {
+        display: flex;
+    }
+
+    .combosMedia:hover>.nomeLanche {
+        display: none;
+    }
+
+
+
+    /*sobre nos*/
+    .horarioRelo {
+        position: relative;
+        top: 30px !important;
+        left: 10px !important;
+        max-width: 100px;
+    }
+
+    .btnMais {
+        position: relative;
+        left: 11px;
+    }
+
+    .btnMenos {
+        position: relative;
+        right: 11px;
+    }
+
+    /*carrinho*/
+    .carrinhoItem {
+        display: flex;
+    }
+
+    /*CEP*/
+    .cepContent>div {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    div.cepMidia {
+        margin-left: 0;
+        margin: 0 30px;
+        padding: 0 5%;
+        max-width: max-content;
+        margin-bottom: 30px;
+    }
+
+    .cepContent>div .formCep {
+        width: 90%;
+    }
+
+    .cepInput {
+        max-width: 300px;
+    }
+
+    .numUf {
+        max-width: 100px;
+    }
+
+    div.midiaPesqEnd{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 20px;
+    }
+
+    div.formularioCep{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+body {
+    background-color: var(--corfundo);
+    max-width: 100;
+}
+
+.conteinerHeard {
+    color: white;
+    font: bold 1, 2em var(--fonte1);
+    margin-left: 50px;
+    max-width: 200px;
+    background-color: rgb(36, 36, 36);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.623);
+    border-right: solid 1px var(--corBordaA);
+    border-bottom: solid 1px var(--corBordaA);
+    margin-bottom: 10px;
+}
+
+main {
+    margin: 0 auto;
+    background-color: var(--corBordaA);
+    max-width: 1100px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.623);
+}
+
+.cntMedia {
+    background-color: var(--corCorpo);
+    display: none;
+
+}
+
+.containerP {
+    display: flex;
+    background-color: var(--corBordaA);
+    width: 100px;
+    height: 110px;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 72%, 50% 100%, 0% 72%);
+    margin-left: 50px;
+    margin-top: -10px;
+    margin-bottom: -40px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+.menuheader {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    background-color: var(--corCorpo);
+    justify-content: space-between;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 2px 0;
+}
+
+.mnTp {
+    font: var(--fonte1) bold 1em;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    transition-duration: .5s;
+}
+
+.mnTp:hover {
+    background-color: var(--corBordaA);
+    flex-direction: row;
+}
+
+/*Home*/
+.imgFundo {
+    max-width: 100%;
+    height: 400px;
+    background-image: url("../imagens/fundo600.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrumaTxt {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.arrumaTxt>h1 {
+    font: bolder 2em var(--fonte1);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+.textoBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.saibaMais {
+    background-color: var(--corfundo);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 3px 3px 0 var(--corSombraF);
+    transition: box-shadow 0.2s ease, transform 0.2s ease
+}
+
+.saibaMais:active {
+    box-shadow: 0px 0px 0 var(--corSombraF), inset 4px 4px 4px var(--corSombraF);
+    transform: translate(4px, 4px);
+}
+
+
+/*carrocel servocp*/
+.secCarrocel {
+    margin: 20px 0 20px 0;
+    text-align: center;
+}
+
+.carrocel {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.carrocel>h2 {
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.carrocelConteiner {
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.carrocelList {
+    width: 500px;
+    display: flex;
+    margin: 0 auto;
+    transition: 0.5s;
+}
+
+
+.carrocelItem {
+    list-style: none;
+    text-align: left;
+}
+
+.carrocelItem>h2 {
+    padding: 15px 0;
+}
+
+.carrocelItem>img {
+    width: 500px;
+}
+
+.carrocelItem:not(:last-child) {
+    margin-right: 20px;
+}
+
+.bttVV {
+    background-color: var(--corBordaA);
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: 10px
+}
+
+.bttVV>img {
+    width: 50px;
+    height: 100px;
+}
+
+
+/*Slides*/
+.slideDestaque {
+    background-color: var(--bege);
+
+}
+
+.sliders {
+    margin: 0 auto;
+    width: 600px;
+    height: auto;
+    overflow: hidden;
+}
+
+.sliders h1 {
+    font-size: 2em;
+    color: var(--corFundo);
+    text-align: center;
+    margin: 20px auto;
+}
+
+.slides {
+    width: 400%;
+    height: auto;
+    display: flex;
+    margin-bottom: 50px;
+    align-items: c;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+    transition: .5s;
+}
+
+.imgSlide {
+    max-width: 600px;
+}
+
+.tituloLanche {
+    position: relative;
+    top: 20px;
+    left: 15px;
+    color: rgb(255, 255, 255);
+}
+
+.labelOferta {
+    position: relative;
+    top: -35px;
+    left: 15px;
+    color: rgb(255, 255, 255);
+}
+
+.valorFull {
+    background-color: rgb(218, 45, 45);
+    padding: 5px;
+    text-decoration: line-through;
+}
+
+.valoroff {
+    background-color: green;
+    margin-left: 15px;
+    padding: 5px;
+}
+
+.addSlide {
+    position: relative;
+    top: -70px;
+    margin: 0 10px;
+    color: rgb(255, 255, 255);
+    text-align: end;
+}
+
+.bttAddSlide {
+    background-color: var(--corfundo);
+    color: white;
+    padding: 5px;
+}
+
+.manualNavi {
+    position: absolute;
+    margin-top: -160px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.navegaAutomatico {
+    position: absolute;
+    width: 600px;
+    margin-top: -160px;
+    display: flex;
+    justify-content: center;
+}
+
+.btnManual {
+    border: 2px solid rgb(255, 251, 251);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btnManual:not(:last-child) {
+    margin-right: 25px;
+}
+
+.btnManual:hover {
+    background-color: rgb(255, 253, 253);
+}
+
+#radio1:checked~.primeiro {
+    margin-left: 0;
+}
+
+#radio2:checked~.primeiro {
+    margin-left: -25%;
+}
+
+#radio3:checked~.primeiro {
+    margin-left: -50%;
+}
+
+#radio4:checked~.primeiro {
+    margin-left: -75%;
+}
+
+.navegaAutomatico div {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+
+.navegaAutomatico div:not(:last-child) {
+    margin-right: 25px;
+}
+
+#radio1:checked~.navegaAutomatico .autoBtn1 {
+    background-color: white;
+}
+
+#radio2:checked~.navegaAutomatico .autoBtn2 {
+    background-color: white;
+}
+
+#radio3:checked~.navegaAutomatico .autoBtn3 {
+    background-color: white;
+}
+
+#radio4:checked~.navegaAutomatico .autoBtn4 {
+    background-color: white;
+}
+
+/*ancora heavenBurger*/
+
+.havenBurger {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    min-height: 650px;
+}
+
+.havenBurger>h2 {
+    color: white;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.burgerDesc {
+    display: flex;
+    background-color: var(--bege);
+    overflow: hidden;
+    background-image: url("../imagens/fundoHaven.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.burgerDesc img {
+    max-width: 600px;
+    margin: auto;
+}
+
+.burgerDesc p {
+    max-width: 600px;
+    margin: 30px auto;
+    color: var(--corSombraF);
+    font-size: 1.55em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.havenBurger>button {
+    margin: 20px;
+}
+
+.hiddenPrg {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+.hiddenImg {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(100%);
+    transition: all 2s;
+    border-radius: 50%;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s;
+}
+
+
+
+/*footer*/
+.footer {
+    background-color: var(--corfundo);
+    color: var(--bege);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.rodapeContainer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contato,
+.redesSociais,
+.politicaPrivacidade {
+    flex: 1 1 100%;
+    max-width: 300px;
+}
+
+.politicaPrivacidade a {
+    text-decoration: none;
+    color: white;
+}
+
+.politicaPrivacidade a:hover {
+    color: var(--corBordaA);
+}
+
+.contato h4,
+.redes-sociais h4 {
+    margin-bottom: 10px;
+}
+
+.redesSociais ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+}
+
+.redesSociais ul img {
+    max-width: 50px;
+}
+
+.redesSociais ul li {
+    margin-top: 10px;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.redesSociais ul li a {
+    color: var(--bege);
+    text-decoration: none;
+}
+
+.redesSociais ul li a:hover {
+    color: var(--corBordaA);
+}
+
+
+/*------------------Sobre Nos-----------------*/
+
+.sobreNos {
+    margin: 0px auto;
+}
+
+.maisSobreNos {
+    display: none;
+    opacity: 0;
+}
+
+.mostraNos {
+    display: inline;
+    opacity: 1;
+}
+
+.quemSomos {
+    position: relative;
+    background-image: url("../imagens/fundoHaven.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 30px 10px;
+}
+
+.xis {
+    background-color: var(--corfundo);
+    color: white;
+    max-width: max-content;
+    padding: 8px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    box-shadow: 3px 3px 0 var(--corSombraF);
+    transition: box-shadow 0.2s ease, transform 0.2s ease
+}
+
+.xis:active {
+    box-shadow: 0px 0px 0 rgb(92, 18, 1), inset 4px 4px 4px var(--corSombraF);
+    transform: translate(4px, 4px);
+}
+
+.h1Nos {
+    text-align: center;
+    color: var(--corfundo);
+    font-size: 2em;
+    padding: 20px
+}
+
+.conteinerNos {
+    display: flex;
+    gap: 10px;
+    max-width: 1100px;
+    align-items: center;
+    padding: 15px;
+    padding-left: 35px;
+    justify-content: space-between;
+}
+
+.quemNosSomos:nth-child(2) {
+    transition-delay: 2000ms;
+}
+
+.conteinerNos p {
+    text-align: left;
+}
+
+.imgNos {
+    border-radius: 50%;
+    max-width: 100%;
+    max-width: 450px;
+}
+
+.paragrafos {
+    font-size: 1.5em;
+    margin: 20px auto;
+    max-width: 800px;
+    color: var(--corfundo);
+}
+
+.missaoVisaoValres {
+    max-width: max-content;
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.missaoVisaoValres img {
+    max-width: 450px;
+}
+
+.missaoVisaoValres :nth-child(1) {
+    transition-delay: 0s;
+}
+
+.missaoVisaoValres :nth-child(2) {
+    transition-delay: 0.5s;
+}
+
+.missaoVisaoValres :nth-child(3) {
+    transition-delay: 1s;
+}
+
+.nossaEquipe {
+    max-width: max-content;
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.atendimentoHora {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 10px;
+    align-items: center;
+    border: 3px solid var(--corfundo);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.horarioRelo {
+    position: relative;
+    top: 70px;
+    left: 60px;
+    max-width: 100px;
+}
+
+.horariosAtendimento h3 {
+    margin: 10px auto;
+}
+
+/*------------Cardapio------------------*/
+.cardapio {
+    background-color: var(--bege);
+}
+
+.tabConteiner {
+    min-height: 600px;
+    border: 1px solid var(--corSombraF);
+    padding: 10px;
+}
+
+.btnAbas {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px auto;
+}
+
+.tabBtn {
+    background-color: var(--corCorpo);
+    border: 1px solid var(--corSombraF);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tabBtn.active {
+    background-color: var(--corfundo);
+    transform: scale(1.25);
+    transition: 0.5s;
+}
+
+
+
+/*pagina Combos*/
+
+
+.conteudoAba {
+    display: none;
+}
+
+.conteudoAba.active {
+    display: block;
+    padding: 1px;
+}
+
+.imgCombo {
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.abaCombos {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 15px;
+}
+
+.combos {
+    min-width: 200px;
+    padding: 10px 10px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: auto;
+    justify-content: center;
+}
+
+.combos:hover {
+    background-color: var(--corBordaA);
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.combos:hover>p {
+    color: white;
+
+}
+
+.combos:hover>.addLanche {
+    display: flex;
+}
+
+.combos:hover>.nomeLanche {
+    display: none;
+}
+
+.combos p {
+    font-weight: bold;
+}
+
+.addLanche {
+    text-align: center;
+    justify-content: center;
+    display: none;
+}
+
+.btnMais {
+    border: 2px solid white;
+    background-color: var(--corfundo);
+    color: white;
+    width: 30px;
+    cursor: pointer;
+
+}
+
+.qtdAdd {
+    border: 2px solid white;
+    background-color: var(--corfundo);
+    color: white;
+    width: 30px;
+
+
+}
+
+.btnMenos {
+    border: 2px solid white;
+    background-color: var(--corfundo);
+    color: white;
+    width: 30px;
+    cursor: pointer;
+
+}
+
+.fadeUp {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(100%);
+}
+
+.showCardapio {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    transition: 1s;
+}
+
+
+
+/*conteiner carrinho*/
+
+#carrinho{
+    overflow-y: scroll;
+}
+
+
+.carrinho {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 990;
+
+    background-color: rgb(255, 255, 255);
+
+    width: 100%;
+    min-height: 100%;
+
+    display: none;
+    color: rgb(0, 0, 0);
+    
+    padding: 30px 0;
+
+}
+
+.carrinho h1 {
+    margin: 30px 35px;
+    color: var(--corfundo);
+}
+
+#carrinho {
+    align-items: center;
+    font-size: 20px;
+}
+
+.carrinhoItem {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin: 0 20px;
+    align-items: center;
+    background-color: white;
+    color: black;
+    margin-bottom: 5px;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.367);
+    max-width: 100vw;
+    gap: 15px;
+}
+
+.imgCombo {
+    max-width: 80px;
+    max-height: 80px;
+    justify-self: end;
+}
+
+.textoCarrinho {
+    text-align: left;
+}
+
+.xisCarrinho {
+    background-color: var(--corfundo);
+    color: white;
+    max-width: max-content;
+    padding: 8px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    box-shadow: 3px 3px 0 var(--corSombraF);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+}
+
+.xisCarrinho:active {
+    box-shadow: 0px 0px 0 rgb(92, 18, 1), inset 4px 4px 4px var(--corSombraF);
+    transform: translate(4px, 4px);
+}
+
+.limparTotal {
+    text-align: end;
+
+}
+
+.limpar {
+    background-color: var(--corfundo);
+    justify-content: end;
+    align-items: end;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.367);
+}
+
+.limpar img {
+    max-width: 35px;
+}
+
+.totalCompra {
+    margin: 0 15px;
+    color: var(--corfundo);
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.btnFinalizar {
+    max-width: max-content;
+    background-color: var(--corfundo);
+    color: white;
+    margin: 0 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: larger;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.367);
+}
+
+.btnsAddRemove {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    margin-right: 5px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    max-width: max-content;
+}
+
+.btnMaisCarrinho {
+    background-color: var(--corfundo);
+    padding: 0 3px;
+    min-width: 10px;
+    color: white;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.367);
+    cursor: pointer;
+
+}
+
+.btnMenosCarrinho {
+    background-color: var(--corfundo);
+    padding: 0 3px;
+    min-width: 10px;
+    color: white;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.367);
+    cursor: pointer;
+}
+
+.hr {
+    border: none;
+    height: 4px;
+    background-color: var(--corfundo);
+    margin: 20px;
+}
+
+.finalizar {
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/*CEP*/
+.cep {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 991;
+
+    background-color: rgb(255, 255, 255);
+
+    width: 100%;
+    min-height: 100%;
+
+    display: none;
+    
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.cepContent {
+    margin-bottom: 50px;
+}
+
+.insiraCep {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.sbttCep {
+    color: var(--corfundo);
+    font-size: 1.5em;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+
+.pesquisaEnd{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.btnPesquisaCep{
+    border-radius: 8px;
+    padding: 10px;
+    background-color:var(--corfundo);
+    color:white;
+    font-weight: bold;
+    border: var(--corCorpo);
+}
+
+.formCep {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.formularioCep {
+    display: grid;
+    grid-template-columns: 50% 40% 8%;
+    column-gap: 10px;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.cepLabel {
+    padding-left: 5px;
+    max-width: max-content;
+    font-size: large;
+    font-weight: bold;
+}
+
+.cepInput {
+    max-width: 230px;
+    font-size: large;
+    margin-bottom: 15px;
+    padding: 7px 10px;
+    font-weight: bold;
+    box-shadow: 3px 4px 5px 3px #6f6c6c84;
+}
+
+.endLabel {
+    padding-left: 5px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.endinput {
+    min-height: 20px;
+    font-size: large;
+    padding: 7px 10px;
+    font-weight: bold;
+    box-shadow: 3px 4px 5px 3px #6f6c6c84;
+}
+
+.passoPedido {
+    padding: 15px;
+}
+
+.imgPasso {
+    max-width: 150px;
+}
+
+.cepImgBusca {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgBuscarCep {
+    width: 30px;
+    height: 30px;
+    margin-left: -35px;
+    margin-top: 5px;
+}
+
+.formularioPesqCEP{
+    display: none;
+    width: 100%;
+}
+
+.formularioPesqManual{
+    display: none;
+    width: 100%;
+}
+
+
+/*Finalizar Pedidos*/
+
+.finalizarPedidos {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 991;
+
+    background-color: rgb(255, 255, 255);
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.infopedido{
+   text-align: left;
+   color: var(--corfundo);
+}
+.infoEnd{
+    text-align: left;
+    color: var(--corfundo);
+ }
+ .conteinerFormaPgmt{
+    align-items: left;
+    text-align: left;
+ }
+ .conteinerFormaPgmt select{
+    font-size: 16px;
+    color: var(--corfundo);
+    font-weight: bold;
+    text-align: left;
+ }
+
+ .totalFimPedido{
+    text-align: left;
+ }
+
+ .boxFinalizaPagamento{
+    max-width: 800px;
+    margin: 0 auto;
+ }
+
+ .boxFinalizaPagamento h2{
+    margin: 20px 0;
+    color: var(--corfundo);
+ }

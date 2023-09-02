@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preload" href="estilos/estilo.css" as="style">
+    <link rel="preload" href="scripts/scriptIndex.js" as="script">
+    <link rel="shortcut icon" href="favicon.ico" type="">
+
+    <link rel="stylesheet" href="estilos/estilo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Burger Haven</title>
+</head>
+
+<body>
+    <!--Cabeçalio-->
+    <header>
+        <nav class="conteinerHeard">
+            <p><b>Haven Burger</b></p>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cntMedia">
+            <div class="containerP logoMedia">
+                <p><b>Logo aqui</b></p>
+            </div>
+        </div>
+        <!--Menu-->
+        <section class="menuCima">
+
+            <nav class="menuheader">
+                <div class="containerP">
+                    <p><b>Logo aqui</b></p>
+                </div>
+                <div class="hamburger active">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <ul id="menuTp">
+                    <a class="mnTp" href="http://127.0.0.1:5500/index.html">Home</a>
+                    <a class="mnTp" onclick="sobreNos()" href="#sobreNos" target="_self" >Sobre nós</a>
+                    <a class="mnTp" href="http://127.0.0.1:5500/itens.html">Cardápio</a>
+                    <a class="mnTp" href="#" onclick="abreCarrinho()">Carrinho</a>
+                    
+                </ul>
+            </nav>
+        </section>
+        <!--carrinho-->
+        <div class="carrinho">
+            <div class="passoPedido">
+                <img class="imgPasso" src="imagens/passo1.png" alt="Passo 2 de ">
+            </div>
+            <button class="xisCarrinho" onclick="fechaCarrinho()">
+                <h3>Fechar</h3>
+            </button>
+            <h1>Seu Carrinho</h1>
+            <div id="carrinho"></div>
+            <div class="limparTotal">
+                <button class="limpar" onclick="limparCarrinho()">
+                    <img src="imagens/lixo.png" alt="Botao Limpar">
+                </button>
+            </div>
+            <hr class="hr">
+            <div class="finalizar">
+                <p class="totalCompra"></p>
+                <button class="btnFinalizar gotoCep" onclick="gotoCep()">Avançar</button>
+            </div>
+        </div>
+        <!--TelaCep-->
+        <div class="cep">
+            <div class="passoPedido">
+                <img class="imgPasso" src="imagens/passo2.png" alt="Passo 2 de ">
+            </div>
+            <div class="cepContent">
+
+                <h2 class="sbttCep">Endereço de entrega</h2>
+
+
+                <div class="pesquisaEnd midiaPesqEnd">
+                    <button class="btnPesquisaCep pesquisaPorCep" onclick="pesquisaPorCEP()">Buscar por CEP</button>
+                    <button class="btnPesquisaCep pesquisarManual"onclick="pesquisaManual()">Inserir Manualmente</button>
+                </div>
+
+
+                <div class="formularioPesqCEP">
+                    <div class="insiraCep cepMidia">
+                        <label class="cepLabel" for="cep">CEP:</label>
+                        <div class="cepImgBusca">
+                            <input class="cepInput" type="cep" placeholder="DIgite o CEP" id="cepInput">
+                            <img class="imgBuscarCep" id="buscarCep" src="imagens/lupaSearch.png"
+                                onclick="btnBuscarCep()" alt="Botão buscar CEP">
+                        </div>
+                    </div>
+                    <div class="formularioCep">
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Endereço:</label>
+                            <p class="endinput" type="endereco" id="logradouro"></p>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Bairro:</label>
+                            <p class="endinput" type="endereco" id="bairro"></p>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel numUf" for="endereco">Núm:</label>
+                            <input class="endinput numUf" type="endereco" id="numeroEnd">
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Cidade:</label>
+                            <p class="endinput" type="endereco" id="cidade"></p>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Complem.:</label>
+                            <input class="endinput" type="endereco">
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel numUf" for="endereco">UF:</label>
+                            <p class="endinput numUf" type="endereco" id="estado"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="formularioPesqManual">
+                    <div class="formularioCep">
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Endereço:</label>
+                            <input class="endinput" type="endereco" id="logradouro2"></input>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Bairro:</label>
+                            <input class="endinput" type="endereco" id="bairro2"></input>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel numUf" for="endereco">Núm:</label>
+                            <input class="endinput numUf" type="endereco2"  id="numeroEnd2">
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Cidade:</label>
+                            <input class="endinput" type="endereco" id="cidade2"></input>
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel" for="endereco">Complem.:</label>
+                            <input class="endinput" type="endereco">
+                        </div>
+                        <div class="formCep">
+                            <label class="endLabel numUf" for="endereco">UF:</label>
+                            <input class="endinput numUf" type="endereco" id="estado2"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr class="hr">
+            <div class="finalizar">
+                <div class="voltarFinalizar">
+                    <button class="btnFinalizar gotoCaarrinho" onclick="gotoCaarrinho()">Voltar</button>
+                    <button class="btnFinalizar gotoInfoOk" onclick="abrirTelaFim()">Avançar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!--TelaFinalizar-->
+
+        <div class="finalizarPedidos">
+
+            <div class="passoPedido">
+                <img class="imgPasso" src="imagens/passo3.png" alt="Passo 2 de ">
+            </div>
+
+            <button class="xisCarrinho" onclick="fechaFInal()">
+                <h3>Fechar</h3>
+            </button>
+
+            <div class="boxFinalizaPagamento">
+                <div class="infopedido">
+                    <h2>Itens no pedido</h2>
+                    <p class="fimPedidoItens"></p>
+                </div>
+                <div class="infoEnd">
+                    <h2>Endereço de entrega </h2>
+                    <p class="fimPedidoRua"></p>
+                    <p class="fimPedidoCdd"></p>
+                </div>
+                
+                <p class="totalFimPedido"></p>
+                <h2>Forma de Pagamento:</h2>
+                <div class="conteinerFormaPgmt">
+                    <select class="listaPgmto" name="formaDePgmto" id="fimPagamento">
+                        <option class="slcBox" value="formaDePgmt">Forma de pagamento</option>
+                        <option class="slcBox" value="Dinheiro">Dinheiro</option>
+                        <option class="slcBox" value="Crédito">Crédito</option>
+                        <option class="slcBox" value="Débito">Débito</option>
+                        <option class="slcBox" value="Pix">Pix</option>
+                    </select>
+                </div>
+            </div>
+            
+
+            <hr class="hr">
+            <div class="finalizar">
+               
+
+                <div class="voltarFinalizar">
+                    <button class="btnFinalizar gotoCaarrinho" onclick="fechaTelaFim()">Voltar</button>
+                    <button class="btnFinalizar gotoInfoOk" onclick="msgWApp()">Finalizar Pedido</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Imagem de fundo-->
+        <div class="escodeMain">
+            <section class="imgFundo">
+                <div class="textoBtn">
+                    <div class="arrumaTxt">
+                        <h1>Saboreie a essência do sabor em cada mordida.</h1>
+                    </div>
+                    <button class="saibaMais btsobreNos" onclick="sobreNos()">
+                        <b>
+                            <p>Mais sobre Nós</p>
+                        </b>
+                    </button>
+                </div>
+            </section>
+            <!--Bem vindos-->
+            <section class="sobreNos">
+                <div class="maisSobreNos">
+                    <div class="quemSomos">
+                        <div class="xis" onclick="fechaSobreNos()">
+                            <h3>X</h3>
+                        </div>
+                        <h1 class="h1Nos"><a name="sobreNos">Conheça a <b>Haven Burger</b>!!</a></h1>
+                        <div class="conteinerNos quemNosSomos mdNos">
+                            <img class="imgNos hiddenImg" src="imagens/fachad600a.jpg" alt="Haven-Burger">
+                            <div class="paragrafos hiddenPrg">
+                                <p>Bem-vindo ao <b>Haven Burger</b>, onde a paixão pela comida e o sabor <b>autêntico</b> se
+                                    encontram!</p>
+                                <p>Nossos hambúrgueres <b>artesanais</b> são preparados com ingredientes frescos, criando
+                                    uma experiência gastronômica única e <b>memorável</b>.</p>
+                                <p>Aqui, cada lanche é uma <b>obra-prima culinária</b>, despertando <b>sensações</b> e
+                                    <b>emoções</b> em cada cliente.
+                                </p>
+                                <p>Venha nos visitar e descubra os sabores que tornam o <b>Haven Burger</b> referência em
+                                    <b>qualidade</b> e <b>satisfação</b>.
+                                </p>
+                                <p><b>Haven Burger</b> - O sabor que transforma momentos em lembranças.</p>
+                            </div>
+                        </div>
+                        <div class="missaoVisaoValres mdNos">
+                            <img class="hiddenPrg hiddenImg" src="imagens/MissaoVisaoValores600.png" alt="">
+                            <div class="paragrafos">
+                                <p class="hiddenPrg"><b>Missão</b>: Proporcionar experiências gastronômicas únicas.
+                                </p>
+                                <p class="hiddenPrg"><b>Visão</b>: Ser a melhor hamburgueria regional.</p>
+                                <p class="hiddenPrg"><b>Valores</b>: Excelência, paixão, respeito, qualidade.</p>
+                            </div>
+                        </div>
+                        <div class="nossaEquipe mdNos">
+                            <img class="imgNos hiddenImg" src="imagens/equipe600.jpg" alt="">
+                            <div class="paragrafos">
+                                <p class="hiddenPrg"><b>Nossa equipe</b> é apaixonada e dedicada!</p>
+                                <p class="hiddenPrg">Chefs e colaboradores <b>comprometidos</b> em entregar lanches <b>excepcionais</b>, verdadeiras <b>obras-primas culinárias</b>.</p>
+                            </div>
+                        </div>
+                        <img class="horarioRelo" src="imagens/relogio.png" alt="">
+                        <div class="horariosAtend hiddenPrg mdNos">
+                            <div class="paragrafos atendimentoHora">
+                                <h3 class="hiddenPrg">Horario de Atendimento</h3>
+                                <p class="hiddenPrg">Segunda a sábado: 14h às 2h.</p>
+                                <p class="hiddenPrg">Domingos: 18h às 00h.</p>
+                                <p class="hiddenPrg">Experiência gastronômica única em qualquer dia da semana.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sobreNos">
+                <!--Carrocel Serviço-->
+                <section>
+                    <div class="secCarrocel">
+                        <h2>Serviços Disponiveis</h2>
+                        <div class="carrocel">
+                            <button class="prev-button bttVV">
+                                <img src="imagens/setaEsq.png" alt="setaEsq.png">
+                            </button>
+                            <div class="carrocelConteiner">
+                                <ul class="carrocelList">
+                                    <li class="carrocelItem ">
+                                        <img src="imagens/delivery.png" alt="image.jpg">
+                                        <div class="barraServico"></div>
+                                        <h2>Sabores no Conforto de Casa.</h2>
+                                        <p>Experimente nossos deliciosos hambúrgueres sem sair de casa! Com nosso serviço de
+                                            delivery rápido e confiável, levamos até você os sabores irresistíveis dos
+                                            nossos hambúrgueres artesanais. Faça seu pedido e desfrute de uma refeição
+                                            saborosa sem preocupações.</p>
+                                    </li>
+                                    <li class="carrocelItem itemDivisor">
+                                        <img src="imagens/takeaway-2.jpg" alt="image.jpg">
+                                        <div class="barraServico"></div>
+                                        <h2>Retire e Saboreie.</h2>
+                                        <p>Com o nosso serviço de takeaway, você pode saborear nossos hambúrgueres incríveis
+                                            em qualquer lugar. Faça seu pedido antecipado, passe na nossa hamburgueria e
+                                            retire sua refeição saborosa, pronta para ser desfrutada. Com praticidade e
+                                            qualidade, leve o sabor dos nossos hambúrgueres para onde quiser</p>
+                                    </li>
+                                    <li class="carrocelItem">
+                                        <img src="imagens/cartering.JPG" alt="image.jpg">
+                                        <div class="barraServico"></div>
+                                        <h2>Catering Personalizado.</h2>
+                                        <p>Celebre seus eventos especiais com os nossos hambúrgueres de dar água na boca!
+                                            Nossa equipe dedicada está pronta para atender suas necessidades de catering,
+                                            oferecendo um menu personalizado que irá encantar seus convidados. Dos pequenos
+                                            encontros às grandes celebrações, garantimos uma experiência gastronômica
+                                            memorável.</p>
+                                    </li>
+                                    <li class="carrocelItem">
+                                        <img src="imagens/reserva.jpg" alt="image.jpg">
+                                        <div class="barraServico"></div>
+                                        <h2>Reserve sua Mesa.</h2>
+                                        <p>Proporcionamos uma experiência completa em nosso ambiente acolhedor. Faça uma
+                                            reserva e garanta seu lugar para desfrutar de nossos hambúrgueres deliciosos com
+                                            conforto e estilo. Seja um encontro casual com amigos ou um jantar especial,
+                                            nossas mesas estão prontas para receber você e criar momentos inesquecíveis</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="next-button bttVV">
+                                <img src="imagens/setaDir.png" alt="setaDir.png">
+                                <button>
+                        </div>
+                    </div>
+                </section>
+                <!--rslide Destaques-->
+                <section class="slideDestaque">
+                    <div class="sliders">
+                        <h1>Destaques</h1>
+                        <div class="slides">
+                            <!--radio btt-->
+                            <input type="radio" name="radioBtn" id="radio1">
+                            <input type="radio" name="radioBtn" id="radio2">
+                            <input type="radio" name="radioBtn" id="radio3">
+                            <input type="radio" name="radioBtn" id="radio4">
+                            <!--Slide-->
+                            <div class="slide primeiro">
+                                <div class="tituloSlide">
+                                    <span class="tituloLanche"><b>Classic Burger</b></span>
+                                </div>
+                                <img class="imgSlide" src="imagens/classicBurger.jpg" alt="Destaque1">
+                                <div class="labelOferta">
+                                    <span class="valorFull">R$15,90</span>
+                                    <span class="valoroff">R$13,90</span>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="tituloSlide">
+                                    <span class="tituloLanche"><b>BBQ Bacon Burger</b></span>
+                                </div>
+                                <img class="imgSlide" src="imagens/bbqBurger.jpg" alt="Destaque1">
+                                <div class="labelOferta">
+                                    <span class="valorFull">R$16,90</span>
+                                    <span class="valoroff">R$14,90</span>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="tituloSlide">
+                                    <span class="tituloLanche"><b>Veggie Burger</b></span>
+                                </div>
+                                <img class="imgSlide" src="imagens/viggieBurger.jpg" alt="Destaque1">
+                                <div class="labelOferta">
+                                    <span class="valorFull">R$17,90</span>
+                                    <span class="valoroff">R$15,90</span>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="tituloSlide">
+                                    <span class="tituloLanche"><b>Chicken Burger</b></span>
+                                </div>
+                                <img class="imgSlide" src="imagens/chicken.jpg" alt="Destaque1">
+                                <div class="labelOferta">
+                                    <span class="valorFull">R$18,90</span>
+                                    <span class="valoroff">R$16,90</span>
+                                </div>
+                            </div>
+                            <!--Navg autom-->
+            
+                        </div>
+                        <div id="teste" class="navegaAutomatico">
+                            <div id="autoBtn1" class="autoBtn1"></div>
+                            <div id="autoBtn2" class="autoBtn2"></div>
+                            <div id="autoBtn3" class="autoBtn3"></div>
+                            <div id="autoBtn4" class="autoBtn4"></div>
+                        </div>
+                        <div class="manualNavi">
+                            <label id="btnManual" for="radio1" class="btnManual"></label>
+                            <label id="btnManual" for="radio2" class="btnManual"></label>
+                            <label id="btnManual" for="radio3" class="btnManual"></label>
+                            <label id="btnManual" for="radio4" class="btnManual"></label>
+                        </div>
+            
+                    </div>
+                </section>
+                <section class="havenBurger">
+                    <h2><b>Delícias entre pães: o sabor que te leva ao paraíso!</b></h1>
+                        <div class="burgerDesc">
+                            <img class="hiddenImg havenImg" src="imagens/HavenBurger.jpg" alt="Heaven-Burger">
+                            <p class="hiddenPrg"><b>Descubra o Haven Special Burger:</b> uma obra-prima de sabores. Carne
+                                <b>angus</b> suculenta, queijos nobres, <b>bacon crocante</b> e molho especial se unem para
+                                criar uma experiência gastronômica inesquecível. <b>Um hambúrguer gourmet feito com
+                                    dedicação</b> e ingredientes selecionados cuidadosamente. Prove o <b>Haven Special
+                                    Burger</b> e deixe-se envolver pelo sabor único e irresistível. Haven Burger - <b>O
+                                    sabor que você merece!</b>
+                            </p>
+                        </div>
+                        <button class="saibaMais">
+                            <p><b>Mais Lanches</b></p>
+                        </button>
+                </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="rodapeContainer">
+            <div class="redesSociais">
+                <h4>Siga-nos</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/" target="_blank"><img src="imagens/facebook.png" alt="">
+                            <b>Facebook</b></a></li>
+                    <li><a href="https://www.Instagram.com/" target="_blank"><img src="imagens/instagram (1).png"
+                                alt=""> <b>Instagram</b></a></li>
+                    <li><a href="https://twitter.com/" target="_blank"> <img src="imagens/twitter.png"
+                                alt=""><b>twiter</b></a></li>
+                    <li><a href="https://www.whatsapp.com/" target="_blank"><img src="imagens/whatsapp.png" alt="">
+                            <b>whatsapp</b></a></li>
+
+                </ul>
+            </div>
+            <div class="politicaPrivacidade">
+                <div class="contato">
+                    <h4>Contato</h4>
+                    <p>Endereço: Rua Principal, 123 - Cidade, Estado</p>
+                    <p>Telefone: (12) 3456-7890</p>
+                    <p>Email: contato@hamburgueria.com</p>
+                </div>
+                <p><a href="politica-privacidade.html">Política de Privacidade</a></p>
+            </div>
+        </div>
+        <div class="direitosAutorais">
+            <p>© 2023 Hamburgueria Fictícia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/scriptIndex.js" defer></script>
+    <script src="scripts/carrinho.js" defer></script>
+</body>
+
+</html>
