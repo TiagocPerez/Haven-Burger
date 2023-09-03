@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
   function sobreNos(){
     btsobreNos.style.display = 'none'
     maisSobre.classList.toggle('mostraNos')
-    
-
   }
   function fechaSobreNos(){
     btsobreNos.style.display = 'inline'
