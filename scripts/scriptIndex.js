@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       hamburger.classList.toggle('active');
       menuheader.classList.toggle('active');
     });
+
   });
   /*mais sobre nos*/
   var maisSobre = document.querySelector('.maisSobreNos')
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function sobreNos(){
     btsobreNos.style.display = 'none'
     maisSobre.classList.toggle('mostraNos')
+    
 
   }
   function fechaSobreNos(){
