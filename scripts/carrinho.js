@@ -297,9 +297,11 @@ function pesquisaManual(){
 
 const telaFimPedido = document.querySelector('.finalizarPedidos')
 function abrirTelaFim(){
+    finalizarItens()
+    mostrarCarrinho();
     totalCompra() 
     finalizarItens()
-    finalizarItens()
+    
     telaFimPedido.style.display = 'block'
     cepConteiner.style.display = 'none'
 }
