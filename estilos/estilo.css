@@ -219,10 +219,7 @@
 
     }
 
-    /*sobrenos*/
-    .mdNos img {
-        width: 80vw;
-    }
+   
 
     /*combos*/
     .conteudoAba {
@@ -286,6 +283,10 @@
 
 
     /*sobre nos*/
+
+     .mdNos img {
+        width: 80vw;
+    }
     .horarioRelo {
         position: relative;
         top: 30px !important;

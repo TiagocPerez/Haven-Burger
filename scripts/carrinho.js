@@ -217,10 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+/*Att itens fim */
+function atualizarItens() {
+    const fimPedidoItens = document.querySelector('.fimPedidoItens');
+    const txtFimPEdido = carrinho.map(item => `${item.nome} x ${item.quantidade}`).join(' + ');
+    
+    fimPedidoItens.textContent = txtFimPEdido;
+}
 
 /*cep*/
 const cepConteiner = document.querySelector('.cep')
 function gotoCep(){
+    atualizarItens()
+    atualizarLocalStorage();
+    mostrarCarrinho();
+    totalCompra()
     cepResponsivo()
     cepConteiner.style.display = 'flex'
     btnCarrinho.style.display = 'none'
@@ -301,7 +312,6 @@ function abrirTelaFim(){
     mostrarCarrinho();
     totalCompra() 
     finalizarItens()
-    
     telaFimPedido.style.display = 'block'
     cepConteiner.style.display = 'none'
 }
@@ -324,6 +334,8 @@ const fimPedidoItens = document.querySelector('.fimPedidoItens')
 const txtFimPEdido = carrinho.map(item => `${item.nome} x ${item.quantidade}`).join(' + ')
 
 function finalizarItens(){
+    const txtFimPEdido = carrinho.map(item => `${item.nome} x ${item.quantidade}`).join(' + ')
+
     const txtEndCompletoRua = `${txtLogradouro.textContent}, ${txtNum.value}`
     const txtEndCompletoCdd = `${txtBairo.textContent},  ${txtCidade.textContent} - ${txtUF.textContent}`
 

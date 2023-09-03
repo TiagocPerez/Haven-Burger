@@ -1,3 +1,9 @@
+
+var hamburger = document.querySelector('.hamburger');
+var menuheader = document.querySelector('.menuheader');
+
+menuheader.classList.add('closed');
+
 document.addEventListener('DOMContentLoaded', function() {
     var hamburger = document.querySelector('.hamburger');
     var menuheader = document.querySelector('.menuheader');
@@ -8,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
       hamburger.classList.toggle('active');
       menuheader.classList.toggle('active');
     });
-
   });
   /*mais sobre nos*/
   var maisSobre = document.querySelector('.maisSobreNos')
