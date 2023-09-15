@@ -6,6 +6,7 @@ function abreCarrinho() {
     atualizarLocalStorage();
     mostrarCarrinho();
     totalCompra()
+    fechaMenu() 
 }
 function fechaCarrinho() {
     btnCarrinho.style.display = 'none';
@@ -15,6 +16,14 @@ function fechaCarrinho() {
     totalCompra()
 }
 
+
+function fechaMenu() {
+    var hamburger = document.querySelector('.hamburger');
+    var menuheader = document.querySelector('.menuheader');
+
+    hamburger.classList.remove('active');
+    menuheader.classList.remove('active');
+}
 
 
 let carrinho = [];

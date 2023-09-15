@@ -246,6 +246,12 @@
         margin-right: 10px;
     }
 
+    .combosMedia .imgCarrinhoCompra{
+       
+        width: 40px;
+        height: auto;
+
+    }
 
 
     .combosMedia {
@@ -258,6 +264,8 @@
         margin: 0;
         justify-content: center;
     }
+
+ 
 
     .combosMedia:hover {
         background-color: var(--corBordaA);
@@ -279,7 +287,7 @@
     .combosMedia:hover>.nomeLanche {
         display: none;
     }
-
+    
 
 
     /*sobre nos*/
@@ -296,18 +304,19 @@
 
     .btnMais {
         position: relative;
-        left: 11px;
+        left: 0x;
     }
 
-    .btnMenos {
+    .addLanche .btnMenos {
         position: relative;
-        right: 11px;
+        right: 0px;
     }
 
     /*carrinho*/
     .carrinhoItem {
         display: flex;
     }
+ 
 
     /*CEP*/
     .cepContent>div {
@@ -527,7 +536,11 @@ main {
 }
 
 .carrocelItem>h2 {
-    padding: 15px 0;
+    padding: 15px ;
+    text-align: center;
+}
+.carrocelItem>p {
+    padding: 0  10px;
 }
 
 .carrocelItem>img {
@@ -1083,6 +1096,20 @@ main {
 
 .combos p {
     font-weight: bold;
+}
+
+.imgCarrinhoCompra{
+    width: 30px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left:10px;
+    border-radius: 5px;
+    display: none;
+    border: 1px solid white;
+}
+.combos:hover>.imgCarrinhoCompra{
+    display: block;
 }
 
 .addLanche {

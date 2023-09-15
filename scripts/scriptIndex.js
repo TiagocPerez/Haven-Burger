@@ -10,11 +10,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuheader.classList.add('closed');
   
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', function (){
       hamburger.classList.toggle('active');
       menuheader.classList.toggle('active');
     });
   });
+
+  function fechaMenu() {
+    var hamburger = document.querySelector('.hamburger');
+    var menuheader = document.querySelector('.menuheader');
+
+    hamburger.classList.remove('active');
+    menuheader.classList.remove('active');
+}
+
   /*mais sobre nos*/
   var maisSobre = document.querySelector('.maisSobreNos')
   var btsobreNos = document.querySelector('.btsobreNos')
@@ -23,8 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
   function sobreNos(){
+    fechaMenu()
     btsobreNos.style.display = 'none'
     maisSobre.classList.toggle('mostraNos')
+    
   }
   function fechaSobreNos(){
     btsobreNos.style.display = 'inline'
